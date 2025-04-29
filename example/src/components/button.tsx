@@ -126,7 +126,7 @@ const ButtonDemo = () => {
         <Button icon={<RiBusinessCalendarFill />} />
       </div>
 
-      <div class={field}>
+      <div class={fieldColumn}>
         <div class={field}>
           <Button size="small">Small</Button>
           <Button size="small" icon={<RiBusinessCalendarFill />}>
