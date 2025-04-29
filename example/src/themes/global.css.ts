@@ -1,4 +1,4 @@
-import { themeContract } from "@/themes";
+import { themeContract, vars } from "@/themes";
 import { style } from "@vanilla-extract/css";
 
 export const box = style({
@@ -14,24 +14,31 @@ export const field = style({
   display: "flex",
   width: "100%",
   padding: "10px",
-  borderRadius: "4px",
+  borderRadius: vars.borderRadiusXLarge,
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
   backgroundColor: themeContract.colorNeutralBackground3,
   boxSizing: "border-box",
-  gap: "8px",
+  gap: vars.spacingHorizontalS,
 });
 
 export const fieldColumn = style({
   display: "flex",
   width: "100%",
   padding: "10px",
-  borderRadius: "4px",
+  borderRadius: vars.borderRadiusXLarge,
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   backgroundColor: themeContract.colorNeutralBackground3,
   boxSizing: "border-box",
-  gap: "12px",
+  gap: vars.spacingVerticalS,
+
+  selectors: {
+    [`&:has(${field})`]: {
+      gap: vars.spacingVerticalNone,
+      padding: "0 10px",
+    },
+  },
 });
