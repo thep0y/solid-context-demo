@@ -1,12 +1,17 @@
-import { AiFillHeart } from "solid-icons/ai";
-import { Button, Spinner } from "@/index";
-import { RiBusinessCalendarFill } from "solid-icons/ri";
 import { children, createMemo, createSignal, onMount } from "solid-js";
-import { useTimeout } from "@/hooks/useTimeout";
+
+import { AiFillHeart } from "solid-icons/ai";
+import { RiBusinessCalendarFill } from "solid-icons/ri";
 import { VsCheck } from "solid-icons/vs";
+
+import Button from "@/components/button/Button";
+import Spinner from "@/components/spinner/Spinner";
+import Divider from "@/components/divider/Divider";
+
+import { useTimeout } from "@/hooks/useTimeout";
+
 import { themeContract } from "@/themes/theme.css";
 import { vars } from "@/themes/var.css";
-import { Divider } from "@/index";
 import { box, field, fieldColumn } from "../themes/global.css";
 
 const buttonNonInteractive = {
@@ -56,10 +61,6 @@ const LoadingButton = () => {
     setLoadingState("initial");
   };
 
-  onMount(() => {
-    console.log("ButtonDemo mounted");
-  });
-
   return (
     <div class={field}>
       <Button
@@ -76,8 +77,15 @@ const LoadingButton = () => {
 };
 
 const ButtonDemo = () => {
+  let boxRef: HTMLDivElement | undefined;
+
+  onMount(() => {
+    console.log("ButtonDemo mounted");
+    console.log("boxRef", boxRef);
+  });
+
   return (
-    <div class={box}>
+    <div ref={boxRef} class={box}>
       <Divider appearance="strong">
         <h2>Button</h2>
       </Divider>
