@@ -12,7 +12,7 @@ import { useTimeout } from "@/hooks/useTimeout";
 
 import { themeContract } from "@/themes/theme.css";
 import { vars } from "@/themes/var.css";
-import { box, field, fieldColumn } from "../themes/global.css";
+import { box, field, fieldColumn } from "~/themes/global.css";
 
 const buttonNonInteractive = {
   "background-color": themeContract.colorNeutralBackground1,
